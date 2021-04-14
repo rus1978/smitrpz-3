@@ -1,0 +1,6 @@
+https://popper.js.org/docs/v2/
+<!-- Production version -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+
+npm i bootstrap @popperjs/core
+
