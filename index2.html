@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <!--<link rel="stylesheet" href="assets/css/scss.style2.css">-->
+
+    <script>
+        var Theme_number = 1;
+        var Default_theme = 1;
+        var Ext = "scss";
+
+        function getUrl(num) {
+            return "./assets/css/" + Ext + ".style" + num + ".css";
+        }
+
+        function getThemeNumber() {
+            Theme_number = Theme_number % 2 === 0 ? 1 : 2;
+            console.log(Theme_number);
+            return Theme_number;
+        }
+
+        function initialize() {
+            var link = document.createElement("link");
+            link.setAttribute("rel", "stylesheet");
+            link.setAttribute("href", getUrl(Default_theme));
+            link.setAttribute("id", "d-link");
+            document.head.appendChild(link);
+        }
+
+        function initListener() {
+            document
+                .querySelector(".mynav__theme")
+                .addEventListener("click", changeTheme);
+        }
+
+        function changeTheme() {
+            document.head
+                .querySelector("#d-link")
+                .setAttribute("href", getUrl(getThemeNumber()));
+        }
+
+        initialize();
+
+        window.addEventListener("load", initListener);
+    </script>
+</head>
+<body class="bg-info">
+
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="http://placehold.it/100/ffffff/000000?text=Логотип" width="30" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" id="gallery-tab" data-toggle="tab" href="#gallery" role="tab" aria-controls="gallery" aria-selected="false">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" id="testing-tab" data-toggle="tab" href="#testing" role="tab" aria-controls="testing" aria-selected="false">Тестирование</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" id="contacts-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="contacts" aria-selected="false">Контакты</a>
+                    </li>
+                </ul>
+
+                <ul class="nav  ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link  text-light" data-toggle="modal" data-target="#exampleModal">Вход</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<div class="container">
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show " id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="single-post">
+                            <h3 class="post-category">Front end</h3>
+                            <h2 class="post-title"><a href="#">Bootstrap</a></h2>
+                            <p>Bootstrap (также известен как Twitter Bootstrap) — свободный набор инструментов для создания сайтов и веб-приложений. Включает в себя HTML- и CSS-шаблоны оформления для типографики, веб-форм, кнопок, меток, блоков навигации и прочих компонентов веб-интерфейса, включая JavaScript-расширения.
+                                Bootstrap использует современные наработки в области CSS и HTML, поэтому необходимо быть внимательным при поддержке старых браузеров.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-posts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img class="card-img-top" src="http://placehold.it/525x350/007bff/?text=Изобр0" alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="post-category">Front end</h3>
+                                    <h5 class="post-title">LESS</h5>
+                                    <p class="card-text">LESS (Leaner Style Sheets, компактная таблица стилей)— это динамический язык стилей, который разработал Alexis Sellier. Он создан под влиянием языка стилей Sass, и, в свою очередь, оказал влияние на его новый синтаксис «SCSS», в котором также использован синтаксис, являющийся расширением СSS.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" style="color: #9dbde5">
+                            <div class="card">
+                                <img class="card-img-top" src="http://placehold.it/525x350/b0e59d/?text=Изобр1" alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="post-category">Back end</h3>
+                                    <h5 class="post-title">C++</h5>
+                                    <p class="card-text">C++ (читается си-плюс-плюс) — компилируемый, статически типизированный язык программирования общего назначения. Поддерживает такие парадигмы программирования, как процедурное программирование, объектно-ориентированное программирование, обобщённое программирование. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img class="card-img-top" src="http://placehold.it/525x350/9DBDE5/?text=Изобр2" alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="post-category">Back end</h3>
+                                    <h5 class="post-title">C#</h5>
+                                    <p class="card-text">C# (произносится си шарп) — объектно-ориентированный язык программирования. Разработан в 1998—2001 годах группой инженеров компании Microsoft под руководством Андерса Хейлсберга и Скотта Вильтаумота как язык разработки приложений для платформы Microsoft .NET Framework.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <img class="card-img-top" src="http://placehold.it/525x350/fd7e14/?text=Изобр3" alt="Card image cap">
+                                <div class="card-body">
+                                    <h3 class="post-category">Front end</h3>
+                                    <h5 class="post-title">CSS</h5>
+                                    <p class="card-text">CSS — формальный язык описания внешнего вида документа, написанного с использованием языка разметки. Преимущественно используется как средство описания, оформления внешнего вида веб-страниц, написанных с помощью языков разметки HTML и XHTML, но может также применяться к любым XML-документам, например, к SVG или XUL.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center after-posts">
+                            <button type="button" class="btn btn-outline-secondary Load-more">
+                                Load more
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="post-title">Контакты</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi beatae dolorum earum, eligendi, est excepturi ipsa magnam natus neque obcaecati odit, quidem quo recusandae sint suscipit voluptatem. Aliquam, id.</p>
+
+
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <label for="inputEmail4">Ваш Email</label>
+                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState">Получатель</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected value="1">Директору</option>
+                                        <option selected value="2">Менеджеру</option>
+                                        <option selected value="3">Отдел рекламы</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputAddress">Ваш адрес</label>
+                                <textarea class="form-control" id="inputAddress" placeholder="1234 Main St"></textarea>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary">Директору</button>
+                                <button type="submit" class="btn btn-warning">менеджеру</button>
+                                <button type="submit" class="btn btn-danger">Отдел продаж</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show" id="testing" role="tabpanel" aria-labelledby="testing-tab">
+            <div class="container-fluid">
+                <div class="row no-gutters" style="outline: 1px solid gray">
+                    <div class="col">
+                        <h2 class="post-title">Тесты</h2>
+
+
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-4 col-sm-6 col-12 text-primary bg-danger" style="outline: 1px solid blue">
+                                    <div style="width: 100%; height: 200px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab doloribus, eius esse ex excepturi fugit illo ipsam, officiis quis quos ratione. Commodi delectus ipsam maiores pariatur repellendus tempora voluptate?</div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12
+                                text-md-right text-lg-right text-xl-right
+                                text-lowercase font-weight-bold" style="color:pink; background-color:darkorange;">
+                                    <div style="width: 100%; height: 100px">Одна из трёх колонок</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mb-md-2 mb-lg-5">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped mt-2 mt-lg-5 mt-md-4 mt-sm-3">
+                                            <caption class="text-secondary">
+                                                Список пользователей
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+                                                    <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+                                                    <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+                                                </svg>
+                                            </caption>
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                                <th scope="col">Заголовок таблицы</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                                <td>Ячейка</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="scss" role="tabpanel" aria-labelledby="scss-tab">
+            <div class="wrapper">
+                <nav class="mynav">
+                    <button class="mynav__theme">Change theme</button>
+                    <ul class="mynav__menu">
+                        <li class="mynav__item"><a href="#" class="mynav__link">Home</a></li>
+                        <li class="mynav__item"><a href="#" class="mynav__link">About</a></li>
+                        <li class="mynav__item"><a href="#" class="mynav__link">Items</a></li>
+                        <li class="mynav__item"><a href="#" class="mynav__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <section class="main">
+                    <div class="main__content">
+                        <div class="main__tile--danger">
+                            <div class="main__header">Product 1</div>
+                            <ul class="main__features">
+                                <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 2<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 4</li>
+                                <li class="main__item">Feature 5</li>
+                            </ul>
+
+                            <div class="main__footer">
+                                <button class="main__button main__button--danger">Click on me!</button>
+                            </div>
+                        </div>
+
+                        <div class="main__tile main__tile--warning">
+                            <div class="main__header">Product 2</div>
+                            <ul class="main__features">
+                                <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 2</li>
+                                <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 5</li>
+                            </ul>
+
+                            <div class="main__footer">
+                                <button class="main__button main__button--warning">Click on me!</button>
+                            </div>
+                        </div>
+
+                        <div class="main__tile main__tile--primary">
+                            <div class="main__header">Product 3</div>
+                            <ul class="main__features">
+                                <li class="main__item">Feature 1</li>
+                                <li class="main__item">Feature 2<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 3<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 5</li>
+                            </ul>
+
+                            <div class="main__footer">
+                                <button class="main__button main__button--primary">Click on me!</button>
+                            </div>
+                        </div>
+
+                        <div class="main__tile main__tile--success">
+                            <div class="main__header">Product 4</div>
+                            <ul class="main__features">
+                                <li class="main__item">Feature 1<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 2</li>
+                                <li class="main__item">Feature 3</li>
+                                <li class="main__item">Feature 4<span class="main__plus">+</span></li>
+                                <li class="main__item">Feature 5<span class="main__plus">+</span></li>
+                            </ul>
+
+                            <div class="main__footer">
+                                <button class="main__button main__button--success">Click on me!</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="tab-pane fade show" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="assets/images/gorod_3.png" alt="Первый слайд">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/images/1.jpg" alt="Второй слайд">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="assets/images/3.jpg" alt="Третий слайд">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="container page-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="http://placehold.it/800/0000FF/FFFFFF?text=Изображение+1" class="fancybox" rel="ligthbox">
+                            <img  src="http://placehold.it/800/0000FF/FFFFFF?text=Изображение+1" class="zoom img-fluid "  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="assets/images/gorod_3.png"  class="fancybox" rel="ligthbox">
+                            <img  src="assets/images/gorod_3.png" class="zoom img-fluid"  alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title m-1" id="exampleModalLabel">Авторизация на сайте</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-froup">
+                            <label for="exampleInputEmail">E-mail адрес:</label>
+                            <input type="email" class="form-control" id="exampleInputEmail" aria-describdby="emailHelp" placeholder="Email" required>
+                            <small id="emailHelp" class="form-text text-muted">Введите ваш e-mail</small>
+                        </div>
+                        <div class="form-froup">
+                            <label for="exampleInputPass">Пароль:</label>
+                            <input type="password" class="form-control" id="exampleInputpass" aria-describdby="passHelp" placeholder="Password" required>
+                            <small id="passHelp" class="form-text text-muted">Пароль должен содержать минимум 8 символов</small>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label py-2">
+                                <input type="checkbox" class="form-check-input">Запомнить меня</input>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="d-sm-flex justify-content-between">
+            <div class="footer-left">
+                <p>Тестовий сайт 2019 год</p>
+            </div>
+            <div class="footer-right">
+                <span>Follow</span>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="./assets/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+</body>
+</html>
